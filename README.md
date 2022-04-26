@@ -48,10 +48,10 @@ carl020958/healthcare:amd64
 docker container exec -it walker105 bash
 ```
 
-* 해당 컨테이너에서 아래 명령어를 입력하여 토큰을 받아주세요
+* 해당 컨테이너에서 아래 명령어를 입력하여 토큰을 받아주세요.
 ```bash
 jupyter server list
-
+# 아래와 같은 토큰이 주어집니다.
 # http://43fad8b096d5:8888/?token=2951f55734cdb334413c561a808962f549b7457f56cc8adf :: /home/jovyan
 ```
 * 위의 주석과 같은 토큰이 나오면 "token=" 뒤의 숫자를 웹 브라우저의 password or token에 입력해주세요.
