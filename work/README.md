@@ -9,7 +9,7 @@ DROP TABLE condition_occurrence, drug_exposure, person, visit_occurrence;
 
 ### 실행시 참고사항
 * db 연결을 위한 URL을 .credentials.json 파일에 두었습니다. 
-* 아래 import와 with 문을 지워주시고 url 부분에 db 연결을 위한 url을 넣어야 합니다.
+* 아래 import와 with 문을 지워주시고 create_engine의 파라미터인 url 부분에 db 연결을 위한 url을 넣어야 합니다.
 ```
 import json
 
