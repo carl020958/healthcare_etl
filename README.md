@@ -10,7 +10,7 @@ git clone https://github.com/carl020958/healthcare_etl.git
 pip3 install -y pandas \
 notebook \
 sqlalchemy \
-psycopg2
+psycopg2 \
 ipython-sql
 ```
 
