@@ -6,3 +6,9 @@
 DROP TABLE condition_occurrence, drug_exposure, person, visit_occurrence;
 ```
 ---
+
+### Task4
+* Task4의 경우 ipython-sql을 사용하는데, 현재 db에 drug_exposure table이 2개가 존재해 아래 코드가 정상 실행되지 않은 점 참고 부탁드립니다.
+```sql
+drug_exposure_sql = %sql select distinct drug_concept_id, concept_name, count(*) as cnt from drug_exposure de join concept on drug_concept_id = concept_id where concept_id in ( 40213154,19078106,19009384,40224172,19127663,1511248,40169216,1539463, 19126352,1539411,1332419,40163924,19030765,19106768,19075601) group by drug_concept_id, concept_name order by count(*) desc
+```
