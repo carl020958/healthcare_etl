@@ -38,7 +38,7 @@ docker container run \
 -d \
 -p 8877:8888 \
 --name walker105 \
--v $(pwd)://home/jovyan/work \
+-v $(pwd):/home/jovyan/work \
 carl020958/healthcare:amd64
 ```
 
