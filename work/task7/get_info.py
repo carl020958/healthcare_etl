@@ -30,7 +30,7 @@ def get_person_info(note, person_id):
     # ethnicity_value
     person["ethnicity_value"] = re.search(r'(?<=Ethnicity:).*(?=\nGender:)', note).group(0).strip()
 
-    # death date 관련 정보는 찾을 수 
+    # death date 관련 정보는 찾을 수 없음
     person["death_date"] = None
 
     return person
@@ -70,7 +70,6 @@ def get_drug_exposure(note, person_id, visit_occurrence_id, drug_exposure_id):
         }
     
     # drug_exposure_start_date, drug_value, route_value, dose_value, unit_value
-    # drug_values = re.findall(r'MEDICATIONS:\n(.*)\s+CONDITIONS:\n', note)[0].strip().split(" ")
     drug_values = re.findall('(?<=MEDICATIONS:\n)(.*?)(?=\n   CONDITIONS:\n)', note, flags=re.S)[0].strip().split(" ")
     if len(drug_values) > 1:
         drug_exposure["drug_exposure_start_date"] = datetime.strptime(drug_values[0], "%Y-%m-%d")
