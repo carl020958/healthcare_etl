@@ -70,15 +70,17 @@ def get_drug_exposure(note, person_id, visit_occurrence_id, drug_exposure_id):
         }
     
     # drug_exposure_start_date, drug_value, route_value, dose_value, unit_value
-    drug_values = re.findall('(?<=MEDICATIONS:\n)(.*?)(?=\n   CONDITIONS:\n)', note, flags=re.S)[0].strip().split(" ")
-    if len(drug_values) > 1:
+    drug_values = re.findall('(?<=MEDICATIONS:\n)(.*?)(?=\n   \n   CONDITIONS)', note, flags=re.S)
+    
+    if drug_values:
+        drug_values = drug_values[0].strip().split(" ")
         drug_exposure["drug_exposure_start_date"] = datetime.strptime(drug_values[0], "%Y-%m-%d")
         drug_exposure["drug_value"] = drug_values[2]
         drug_exposure["route_value"] = drug_values[5]
         drug_exposure["dose_value"] = drug_values[3]
         drug_exposure["unit_value"] = drug_values[4]
-    
-    return drug_exposure
+        return [drug_exposure]
+    return []
 
 def get_condition_occurrence(note, person_id, visit_occurrence_id):
     
