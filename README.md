@@ -39,7 +39,7 @@ docker container run \
 -p 8877:8888 \
 --name walker105 \
 -v $(pwd):/home/jovyan/work \
-carl020958/healthcare:amd64
+zsu58/healthcare:amd64
 ```
 
 * 웹 브라우저에 localhost:8877(포트를 바꿨다면 8877 대신 입력한 포트를 입력해주세요)을 입력하면 주피터가 나옵니다.
